@@ -1,0 +1,111 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <!--
+     1： 如果没有来路信息禁止打开，有特殊参数可以
+     2： 每次转发的链接  5分钟有效
+	 https://blog.csdn.net/leeking888/article/details/6824991
+	 
+    -->
+
+    <title>入口</title>
+</head>
+
+<script src="https://cdn.jsdelivr.net/clipboard.js/1.5.12/clipboard.min.js"></script>
+<script>
+
+	function GetQueryString(name) {
+   var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)","i");
+   var r = window.location.search.substr(1).match(reg);
+   if (r!=null) return (r[2]); return "";
+
+}
+           var url="http://119.23.234.151:828/wwwroot/client.html";
+		   if(GetQueryString("opentime")!=""){
+		       var opentime=GetQueryString("opentime");
+		       var newDate = new Date(Number(opentime));
+			   var now = new Date();
+			   if((parseInt(now - newDate) / 1000 / 60)<=1){
+			     window.location.href=url;
+			   }
+		   }
+
+		  if(GetQueryString("alienzhou")!=""){
+		      window.location.href = url;
+              
+		  }
+	 　　 　//var ref = document.referrer;
+
+</script>
+
+<body style="text-align:center;">
+   
+  
+  <div class="main_page">
+	 <iframe scrolling="no" id="main" name="main" frameborder="0"  src="https://alien-zhou.github.io/html5Camera/doorway.html?alienzhou=1"  style="min-height:600px;width:100%;height:100%;"></iframe>
+</div>
+
+    <span id="info"> 要进来？跟我说一声就可以了。</span>
+
+    <div style="position: absolute; top: -1100px;"><span id="target"></span> </div>
+
+	<script>
+	setTimeout(function(){
+	
+	
+	//f(ifr);
+	 
+	},3000)
+	function  f(ifr){
+	 	  //解决打开高度太高的页面后再打开高度较小页面滚动条不收缩
+  	  ifr.style.height='0px';
+      var iDoc = ifr.contentDocument || ifr.document
+      var height = calcPageHeight(iDoc)
+      if(height < 850){
+      	height = 850;
+      }
+      ifr.style.height = height + 'px'
+	}
+  // 计算页面的实际高度，iframe自适应会用到
+  function calcPageHeight(doc) {
+  alert(doc.body.clientHeight);
+      var cHeight = Math.max(doc.body.clientHeight, doc.documentElement.clientHeight)
+      var sHeight = Math.max(doc.body.scrollHeight, doc.documentElement.scrollHeight)
+      var height  = Math.max(cHeight, sHeight)
+      return height
+  }
+  //根据ID获取iframe对象
+  var ifr = document.getElementById('main')
+  ifr.onload = function() {
+		//f(ifr);
+  }
+</script>
+
+    <script>
+
+
+		   if(GetQueryString("setdate")!=""){
+		       var newDay = new Date();
+			   document.getElementById("target").innerHTML="https://alien-zhou.github.io/html5Camera/doorway.html?opentime="+newDay.getTime();
+		       document.write('<button class="btn" data-clipboard-action="copy" data-clipboard-target="#target" id="copy_btn" style=" width: 100%; height: 62px; font-weight: bold; font-size: 21px;">马上转发</button>');
+		   }
+
+		    var clipboard = new Clipboard('#copy_btn');
+        clipboard.on('success', function(e) {
+            console.info('Action:', e.action);
+            console.info('Text:', e.text);
+            console.info('Trigger:', e.trigger);
+			 document.getElementById("info").innerHTML="复制成功";
+            e.clearSelection();
+        });
+    </script>
+
+
+
+
+
+</body>
+
+</html>
