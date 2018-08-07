@@ -26,16 +26,13 @@
 
 
     <script type="text/javascript">
-        var ref = document.referrer;
+     
         var url = "http://webppt.wuyu.info/doorway.html";
-        if (ref == "") {
-            window.location.href = url;
+       
+       document.write('<iframe scrolling="auto" id="main" name="main" frameborder="0" src="' + url + '" style="min-height:600px;width:100%;height:100%;margin:0px; padding:0px;"></iframe>');
+        
 
-        } else {
-            document.write('<iframe scrolling="auto" id="main" name="main" frameborder="0" src="' + url + '" style="min-height:600px;width:100%;height:100%;margin:0px; padding:0px;"></iframe>');
-        }
-
-        ref = "";
+     
         //var url = "";
         function iframeonload(ifr) {
             // setTimeout(function () { $("#main").removeAttr("src"); }, 5000);
