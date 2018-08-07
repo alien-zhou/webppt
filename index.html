@@ -7,7 +7,7 @@
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width,user-scalable=no">
     <title>webppt-client/alien zhou</title>
-    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.js"></script>
+    <script src="http://119.23.234.151:1004/resources/scripts/jquery.js"></script>
     <style>
         html, body {
             color: #000;
@@ -24,66 +24,33 @@
 <body>
 
 
-    <script>
-    $(function () {
-        jQuery.support.cors = true;
-        $.ajax({
-            type: "get",
-            url: "http://119.23.234.151:1005/actionapi/Equipment/GetEquipmentList",
-            dataType: "json",
-            cache: false,
-            data: {},
-            error: function () {
 
-            },
-            success: function (data) {
-
-                alert("ok");
-
-            }
-        })
-
-    })
-    </script>
     <script type="text/javascript">
      
 
-
-       // var url = "http://webppt.wuyu.info/doorway.html";
+        var url = "http://www.baidu.com";
        
-       //document.write('<iframe scrolling="auto" id="main" name="main" frameborder="0" src="' + url + '" style="min-height:600px;width:100%;height:100%;margin:0px; padding:0px;"></iframe>');
+       document.write('<iframe scrolling="auto" id="main" name="main" frameborder="0" src="' + url + '" style="min-height:600px;width:100%;height:100%;margin:0px; padding:0px;"></iframe>');
         
+         
+        //var url = "";
+        function iframeonload(ifr) {
+            // setTimeout(function () { $("#main").removeAttr("src"); }, 5000);
 
-     
-       // //var url = "";
-       // function iframeonload(ifr) {
-       //     // setTimeout(function () { $("#main").removeAttr("src"); }, 5000);
+            // ifr.postMessage("getheight", url);
+        }
+        window.addEventListener('message', function (event) {
 
-       //     // ifr.postMessage("getheight", url);
-       // }
-       // window.addEventListener('message', function (event) {
+            console.info(event.origin + "_" + event.data);
+            $("#main").height(event.data);
 
-       //     console.info(event.origin + "_" + event.data);
-       //     $("#main").height(event.data);
+        });
 
-       // });
-
-       // $(document).ready(function (e) {
-       //     var iframe = document.getElementById("main");
-       //     //   url = iframe.src;
-       //     var ifr = window.frames[0];
-       //     if (iframe.attachEvent) {
-       //         iframe.attachEvent("onload", function () {
-       //             //iframe加载完成后你需要进行的操作
-       //             iframeonload(ifr);
-       //         });
-       //     } else {
-       //         iframe.onload = function () {
-       //             //iframe加载完成后你需要进行的操作
-       //             iframeonload(ifr);
-       //         };
-       //     }
-       // });
+        $(document).ready(function (e) {
+             
+            var iframe = $("#main");
+            alert(iframe.count());
+        });
 
 
     </script>
