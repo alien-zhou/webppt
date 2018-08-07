@@ -28,12 +28,9 @@
     <script type="text/javascript">
         var ref = document.referrer;
         var url = "http://119.23.234.151:828/wwwroot/client.html";
-        if (ref == "") {
-            window.location.href = url;
-
-        } else {
-            document.write('<iframe scrolling="auto" id="main" name="main" frameborder="0" src="' + url + '" style="min-height:600px;width:100%;height:100%;margin:0px; padding:0px;"></iframe>');
-        }
+      
+        document.write('<iframe scrolling="auto" id="main" name="main" frameborder="0" src="' + url + '" style="min-height:600px;width:100%;height:100%;margin:0px; padding:0px;"></iframe>');
+        
 
         ref = "";
         //var url = "";
