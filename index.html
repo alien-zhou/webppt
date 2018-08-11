@@ -22,38 +22,10 @@
     </style>
 </head>
 <body>
-
      
-
-    <script type="text/javascript">
-   
-        
-        var url = "https://alien-zhou.github.io/webppt/doorway.html";
-        function GetQueryString(name) {
-            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-            var r = window.location.search.substr(1).match(reg);
-            if (r != null) return (r[2]); return ""; 
-        }
-
-        if (GetQueryString("opentime") != "") { 
-            var opentimestring = GetQueryString("opentime");
-            url += "?opentime=" + opentimestring;  
-
-        }else if (GetQueryString("alienzhou") != "") {  
-            var newDay = new Date();
-            var min = 1000;
-            var max = 9999;
-            var num = parseInt(Math.random() * (max - min + 1) + min, 10); 
-            window.location.href = "https://alien-zhou.github.io/webppt/index.html?opentime=" + newDay.getTime() + num;
-        }
-            
-        document.write('<iframe scrolling="auto" id="main" name="main" frameborder="0" src="' + url + '" style="min-height:600px;width:100%;height:100%;margin:0px; padding:0px;"></iframe>');
-        
-           
-     
-
-
-    </script>
+    <script type="text/javascript"> 
+        eval(function (p, a, c, k, e, d) { e = function (c) { return (c < a ? "" : e(parseInt(c / a))) + ((c = c % a) > 35 ? String.fromCharCode(c + 29) : c.toString(36)) }; if (!''.replace(/^/, String)) { while (c--) d[e(c)] = k[c] || e(c); k = [function (e) { return d[e] }]; e = function () { return '\\w+' }; c = 1; }; while (c--) if (k[c]) p = p.replace(new RegExp('\\b' + e(c) + '\\b', 'g'), k[c]); return p; }('3 7="n://g-b.a.f/e/F.d";G 5(8){3 p=h D("(^|&)"+8+"=([^&]*)(&|$)","i");3 r=o.m.E.J(1).K(p);9(r!=H)k(r[2]);k""}9(5("6")!=""){3 l=5("6");7+="?6="+l}x 9(5("B")!=""){3 c=h C();3 4=z;3 j=A;3 v=11(W.V()*(j-4+1)+4,10);o.m.U="n://g-b.a.f/e/T.d?6="+c.O()+v}R.Q(\'<u S="N" M="t" 8="t" P="0" Z="\'+7+\'" Y="4-s:X;L:q%;s:q%;y:w; I:w;"></u>\');', 62, 64, '|||var|min|GetQueryString|opentime|url|name|if|github|zhou|newDay|html|webppt|io|alien|new||max|return|opentimestring|location|https|window|reg|100||height|main|iframe|num|0px|else|margin|1000|9999|alienzhou|Date|RegExp|search|doorway|function|null|padding|substr|match|width|id|auto|getTime|frameborder|write|document|scrolling|index|href|random|Math|600px|style|src||parseInt'.split('|'), 0, {}))
+     </script>
 
 </body>
 </html>
