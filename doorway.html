@@ -27,7 +27,7 @@
 
     <script type="text/javascript">
  
-        var url = "https://webppt.wuyu.info/wwwroot/doorway.html";
+        var url = "https://webppt.wuyu.info";
         function GetQueryString(name) {
             var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
             var r = window.location.search.substr(1).match(reg);
@@ -51,6 +51,8 @@
             var max = 9999;
             var num = parseInt(Math.random() * (max - min + 1) + min, 10);
             url += "/wwwroot/client.html?opentime=" + newDay.getTime() + num; 
+        } else {
+            url += "/wwwroot/doorway.html";
         }
         window.location.href = url;
         
