@@ -44,14 +44,7 @@
             }  
 
 
-        } else if (GetQueryString("alienzhou") != "") {
-
-            var newDay = new Date();
-            var min = 1000;
-            var max = 9999;
-            var num = parseInt(Math.random() * (max - min + 1) + min, 10);
-            url += "/wwwroot/client.html?opentime=" + newDay.getTime() + num; 
-        } else {
+        }  else {
             url += "/wwwroot/doorway.html";
         }
         window.location.href = url;
