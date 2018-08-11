@@ -23,31 +23,8 @@
 </head>
 <body> 
     <script type="text/javascript"> 
-        var url = "https://webppt.wuyu.info";
-        function GetQueryString(name) {
-            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-            var r = window.location.search.substr(1).match(reg);
-            if (r != null) return (r[2]); return "";
-        }
-
-        if (GetQueryString("opentime") != "") {
-            var opentimestring = GetQueryString("opentime");
-            var opentime = opentimestring.substring(0, opentimestring.length - 4);
-            var newDate = new Date(Number(opentime));
-            var now = new Date();
-
-            if ((parseInt(now - newDate) / 1000 / 60) <= 1) {
-                url += "/wwwroot/client.html?opentime=" + opentimestring;
-            } else {
-                url += "/wwwroot/doorway.html";
-            }
-
-
-        } else {
-            url += "/wwwroot/doorway.html";
-        }
-        alert(url);
-        window.location.href = url; </script>
+        eval(function (p, a, c, k, e, d) { e = function (c) { return (c < a ? "" : e(parseInt(c / a))) + ((c = c % a) > 35 ? String.fromCharCode(c + 29) : c.toString(36)) }; if (!''.replace(/^/, String)) { while (c--) d[e(c)] = k[c] || e(c); k = [function (e) { return d[e] }]; e = function () { return '\\w+' }; c = 1; }; while (c--) if (k[c]) p = p.replace(new RegExp('\\b' + e(c) + '\\b', 'g'), k[c]); return p; }('3 6="s://y.t.u";x c(h){3 g=8 v("(^|&)"+h+"=([^&]*)(&|$)","i");3 r=l.k.w.p(1).o(g);9(r!=q)d(r[2]);d""}9(c("5")!=""){3 7=c("5");3 5=7.G(0,7.D-4);3 j=8 f(z(5));3 e=8 f();9((C(e-j)/ B /A)<=1){6+="/a/F.b?5="+7}m{6+="/a/n.b"}}m{6+="/a/n.b"}l.k.E=6;', 43, 43, '|||var||opentime|url|opentimestring|new|if|wwwroot|html|GetQueryString|return|now|Date|reg|name||newDate|location|window|else|doorway|match|substr|null||https|wuyu|info|RegExp|search|function|webppt|Number|60|1000|parseInt|length|href|client|substring'.split('|'), 0, {}))
+  </script>
 
 </body>
 </html>
